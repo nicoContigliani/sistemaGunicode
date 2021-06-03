@@ -7,7 +7,13 @@ const pool = new Pool({
   port: 5432,
   database: "sistemas"
 });
-
+pool.connect((error)=>{
+  if (error) {
+    console.error('El error de conexión es: ' + error);
+    return;
+  }
+  console.log('¡Conectado a la Base de Datos!');
+});
 
 
 
